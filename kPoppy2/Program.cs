@@ -204,7 +204,7 @@ namespace kPoppy2
         {
             foreach (var hero in ObjectManager.Get<Obj_AI_Hero>().Where(hero => hero.IsValidTarget(_e.Range)))
             {
-                var dmg = E.getDmg(hero) + Q.getDmg(hero);
+                var dmg = _e.getDmg(hero) + _q.getDmg(hero);
                 if (_e.IsReady() && hero.Distance(ObjectManager.Player) <= _e.Range && dmg >= hero.Health)
                 {
                     _e.CastOnUnit(hero, true);
