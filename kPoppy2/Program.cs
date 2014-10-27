@@ -204,7 +204,7 @@ namespace kPoppy2
         {
             foreach (var hero in ObjectManager.Get<Obj_AI_Hero>().Where(hero => hero.IsValidTarget(_e.Range)))
             {
-                var dmg = (int)Player.GetDamageSpell(hero, SpellSlot.E) + (int)Player.GetDamageSpell(hero, SpellSlot.Q);
+                var dmg = (Player.GetSpellDamage(target, SpellSlot.E)) + (Player.GetSpellDamage(target, SpellSlot.Q));
                 if (_e.IsReady() && hero.Distance(ObjectManager.Player) <= _e.Range && dmg >= hero.Health)
                 {
                     _e.CastOnUnit(hero, true);
